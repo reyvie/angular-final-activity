@@ -1,0 +1,24 @@
+
+<img class="img-fluid center rounded-circle" src="{{profile.photo_url || 'https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg'}}">
+
+<div  *ngIf="isLogged">
+<button type="button" class="btn btn-dark btn-block" routerLink="/my-profile" >Edit Profile</button>
+</div>
+  <div class="card  bg-white" style="max-width: 32rem; margin: 0 auto; float: none; margin-bottom: 10px; margin-top: 30px;">
+
+  <div class="card-body">
+    <div class="form-group">
+      <p><b>Name:</b></p>
+      <p>{{profile.first_name}}</p>
+      <hr>
+      <p><b>Job Title:</b></p>
+      <p>{{profile.job_title}}</p>
+      <hr>
+      <p><b>Email:</b></p>
+      <p>{{profile.email}}</p>
+      <hr>
+      <p><b>Mobile No.:</b></p>
+      <p>{{profile.mobile_number}}</p>
+    </div>
+  </div>
+</div>

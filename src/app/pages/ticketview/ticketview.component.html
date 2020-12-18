@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Tickets</h1>
+  <hr>
+  <h3>{{tickets.name}}</h3>
+</div>
+
+<div class="card bg-white" style="max-width: 100%; margin: 0 auto; float: none; margin-bottom: 30px; margin-top: 30px;">
+  <div class="card-body">
+    <div class="form-group p-2">
+      <div class="row">
+        <label>Submitted at: {{tickets.submitted}}</label>
+      </div>
+      <hr>
+      <div class="row">
+        <label>Priority: {{tickets.priority}}</label>
+      </div>
+      <hr>
+      <div class="row">
+        <label>Status: {{tickets.status}}</label>
+      </div>
+      <hr>
+      <div class="row">
+        <label>Assignee: {{tickets.assigned}}</label>
+      </div>
+        <!-- (click)="" -->
+    </div>
+  </div>
+</div>
+<button routerLink="/tickets" class="btn btn-dark">Back</button>

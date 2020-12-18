@@ -1,0 +1,69 @@
+<!-- <div  *ngIf="!isLogged"> -->
+
+<!-- </div> -->
+
+<!-- <div class="card  bg-white" style="max-width: 32rem; margin: 0 auto; float: none; margin-bottom: 10px; margin-top: 30px;">
+  <div class="card-header bg-dark text-white">Login</div>
+  <div class="card-body">
+    <div class="form-group p-3">
+      <div class="row" id="username">
+        <label for="username">Username</label>
+        <input [(ngModel)]="logins.username" class="form-control" required/>
+      </div>
+
+      <div class="row" id="password">
+        <label for="password">Password</label>
+        <input [(ngModel)]="logins.password" class="form-control" type ="password" required/>
+      </div>
+      <br>
+      <div class="row">
+        <button (click)="onLogin()" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="card  bg-white" style="max-width: 32rem; margin: 0 auto; float: none; margin-bottom: 10px; margin-top: 30px;">
+  <div class="card-header bg-dark text-white">Login</div>
+  <div class="card-body">
+    <div class="form-group p-3">
+      <form [formGroup]="credentialForm" (ngSubmit)="onLogin()" >
+        <div class="form-row">
+
+        <div class="form-group col-md-12">
+          <div class="form-group">
+            <label for="password">Username</label>
+            <input [(ngModel)]="logins.username" formControlName ="username" class="form-control" type="username" placeholder="Username"/>
+          </div>
+
+          <div *ngIf="!credentialForm.get('username').valid && credentialForm.get('username').touched" style="color:red; margin-top:-15px;">
+            Username required
+          </div>
+
+          <div class="form-group">
+            <label for="confirm_password">Password</label>
+            <input [(ngModel)]="logins.password" formControlName ="password" class="form-control" type="password" placeholder="Password"/>
+          </div>
+
+          <div *ngIf="!credentialForm.get('password').valid && credentialForm.get('password').touched" style="color:red; margin-top:-15px;">
+            Password required
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-dark" type="submit">Submit</button>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </form>
+
+
+    </div>
+
+  </div>
+</div>
